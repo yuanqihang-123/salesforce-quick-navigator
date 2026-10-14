@@ -1,0 +1,179 @@
+/* Compact navigation layout; settings keep their larger management layout. */
+.popup {
+  padding: 14px 16px;
+}
+.popup header {
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.popup h1 {
+  font-size: 14px;
+  line-height: 1.3;
+}
+.popup .brand-mark {
+  min-width: 26px;
+  width: 26px;
+  height: 26px;
+}
+.popup .settings-button {
+  font-size: 18px;
+  padding: 3px;
+}
+.popup .section-heading {
+  margin-bottom: 8px;
+}
+.popup .link-list {
+  margin-top: 8px;
+  max-height: 370px;
+}
+.popup .group-heading {
+  margin: 12px 0 4px;
+}
+.popup .link-row {
+  padding: 4px 0;
+  gap: 5px;
+}
+.popup .star {
+  padding: 2px 4px;
+  font-size: 18px;
+}
+.popup .link-name {
+  padding: 3px 0;
+}
+/* Fixed overlays do not size Chrome's popup; reserve room while editing. */
+.popup.form-open {
+  height: 600px;
+  max-height: 600px;
+  overflow: hidden;
+}
+.popup.form-open .dialog {
+  padding: 16px;
+  max-height: calc(100vh - 28px);
+}
+.popup.form-open .dialog h2 {
+  margin-bottom: 10px;
+}
+.popup.form-open .dialog label {
+  margin: 8px 0;
+  gap: 4px;
+}
+.popup.form-open .dialog .hint {
+  margin: 4px 0 8px;
+  line-height: 1.4;
+}
+.popup.form-open .dialog .actions {
+  position: sticky;
+  bottom: -16px;
+  background: white;
+  margin-top: 12px;
+  padding: 10px 0 4px;
+  z-index: 1;
+}
+
+.popup .popup-actions {
+  justify-content: space-between;
+  gap: 8px;
+}
+.popup-actions button {
+  font-size: 12px;
+  padding: 7px 9px;
+}
+.popup .project-select {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+.popup .project-select select {
+  flex: 1;
+  padding: 5px;
+}
+
+.popup .link-row.keyboard-active {
+  background: #eaf2ff;
+  border-radius: 6px;
+  box-shadow: inset 3px 0 #1761ce;
+}
+.popup .keyboard-active .link-name {
+  color: #114fae;
+}
+.popup .popup-keyboard-hint {
+  display: block;
+  margin: 4px 0 0;
+  font-size: 10px;
+}
+
+.org-open-dialog {
+  padding: 18px;
+  max-width: 340px;
+}
+.org-open-dialog h2 {
+  font-size: 15px;
+  margin-bottom: 18px;
+}
+.org-carousel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.org-carousel > div {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+.org-carousel small {
+  display: block;
+  margin-top: 5px;
+  color: #64748b;
+  font-size: 11px;
+}
+.org-carousel strong {
+  font-size: 22px;
+  line-height: 1.25;
+}
+.org-carousel button {
+  padding: 3px 11px;
+  font-size: 22px;
+}
+.org-open-dialog .hint {
+  text-align: center;
+  font-size: 11px;
+  margin-top: 14px;
+}
+.org-open-dialog .actions {
+  margin-top: 12px;
+}
+
+.popup .icon-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  padding: 6px;
+}
+
+.popup .star-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2px;
+  flex-shrink: 0;
+  padding: 2px;
+}
+.popup .open-count {
+  color: #687a94;
+  font-size: 10px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.popup .standalone-count {
+  min-width: 18px;
+  text-align: center;
+  flex-shrink: 0;
+}

@@ -1,0 +1,71 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: #172b4d66;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+}
+.dialog {
+  width: 100%;
+  max-width: 480px;
+  max-height: calc(100vh - 28px);
+  overflow: auto;
+  background: white;
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: 0 15px 60px #172b4d33;
+}
+.dialog h2 {
+  font-size: 18px;
+}
+.dialog label,
+.data-actions label {
+  display: grid;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  margin: 13px 0;
+}
+.dialog input:not([type='checkbox']),
+.dialog textarea,
+select {
+  width: 100%;
+  border: 1px solid #cdd7e5;
+  border-radius: 6px;
+  padding: 9px;
+  color: #253349;
+  background: white;
+}
+.dialog textarea {
+  resize: vertical;
+}
+.dialog .checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 400;
+}
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 20px;
+}
+.dialog select {
+  width: 100%;
+  padding: 9px;
+  border: 1px solid #cdd7e5;
+  border-radius: 6px;
+  background: white;
+}
+.route-overrides {
+  font-size: 12px;
+  margin-top: 10px;
+}
+.route-overrides summary {
+  cursor: pointer;
+  color: #1761ce;
+}

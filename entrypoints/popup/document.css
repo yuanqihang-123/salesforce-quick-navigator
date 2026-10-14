@@ -1,0 +1,13 @@
+/* Give Chrome a stable intrinsic width before React mounts.
+   Viewport-relative widths can collapse during popup auto-sizing. */
+html,
+body,
+#root {
+  width: 400px;
+  min-width: 400px;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}

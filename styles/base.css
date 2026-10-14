@@ -1,0 +1,209 @@
+:root {
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+  color: #253349;
+  background: #f4f7fb;
+  font-size: 14px;
+  font-synthesis: none;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+button,
+.file-button {
+  border: 1px solid #d4dce7;
+  border-radius: 7px;
+  background: white;
+  color: #34445c;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: 500;
+}
+button:hover,
+.file-button:hover {
+  background: #eef3fb;
+  border-color: #a9bbd6;
+}
+button:disabled,
+.disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+.file-button:focus-within {
+  outline: 3px solid #a4c8ff;
+  outline-offset: 2px;
+}
+.primary {
+  background: #1761ce;
+  color: white;
+  border-color: #1761ce;
+}
+.primary:hover {
+  background: #114fae;
+  color: white;
+}
+.danger {
+  background: #be3434;
+  border-color: #be3434;
+  color: white;
+}
+.app {
+  padding: 22px;
+}
+.popup {
+  width: 400px;
+  max-height: 550px;
+  overflow-y: auto;
+  background: white;
+}
+.settings {
+  max-width: 1000px;
+  margin: 32px auto;
+  padding: 30px;
+}
+header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 23px;
+}
+h1 {
+  font-size: 17px;
+  line-height: 1.4;
+  margin: 0;
+}
+h2 {
+  font-size: 18px;
+  margin: 0 0 16px;
+}
+p {
+  line-height: 1.6;
+}
+.hint {
+  font-size: 12px;
+  color: #64748b;
+  margin: 5px 0 12px;
+}
+.brand-mark {
+  min-width: 38px;
+  width: 38px;
+  height: 38px;
+}
+.settings-button {
+  margin-left: auto;
+  border: 0;
+  font-size: 22px;
+  padding: 6px;
+}
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 1.3px;
+  color: #697b96;
+}
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #9aabc1;
+}
+.dot.connected {
+  background: #2c9d78;
+}
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.section-heading h2 {
+  margin: 0;
+}
+.popup .section-heading {
+  justify-content: flex-end;
+}
+.error {
+  color: #9d2929;
+  background: #fff1f1;
+  border: 1px solid #f5cccc;
+  border-radius: 7px;
+  padding: 10px;
+  font-size: 12px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-height: 180px;
+  overflow: auto;
+}
+.banner {
+  display: flex;
+  align-items: start;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.banner button {
+  margin-left: auto;
+  padding: 0 5px;
+  border: 0;
+  background: transparent;
+}
+.notice {
+  background: #fff9e8;
+  color: #89681a;
+  border-radius: 7px;
+  padding: 10px;
+  font-size: 12px;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.bookmark-prompt {
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid #dbe8fc;
+  border-radius: 8px;
+  background: #f8fbff;
+  font-size: 12px;
+}
+.bookmark-prompt .hint {
+  margin: 6px 0 10px;
+}
+.bookmark-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.bookmark-actions:empty {
+  display: none;
+}
+.bookmark-prompt button {
+  padding: 6px 9px;
+  font-size: 12px;
+}
+.bookmark-project {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 0;
+  font-size: 13px;
+}
