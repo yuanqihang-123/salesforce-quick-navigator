@@ -1,5 +1,6 @@
 import { browser } from 'wxt/browser';
 import type { SalesforceDomainType } from '../types';
+import { pageName } from './pageName';
 import { extractRoute, parseOrg, resolveUrl, validateNavigationUrl } from './salesforceUrlResolver';
 export const tabService = {
   async getActiveTab(): Promise<{ url: string; title: string }> {
@@ -21,7 +22,7 @@ export const tabService = {
   async currentPage() {
     const tab = await this.getActiveTab();
     return {
-      name: tab.title.slice(0, 100),
+      name: pageName(tab.title),
       route: extractRoute(tab.url),
       category: '',
       description: '',

@@ -37,7 +37,7 @@ export function registerSaveMenu(): void {
               {
                 id: 'save-page',
                 title: 'Save to Salesforce Quick Navigator',
-                contexts: ['page'],
+                contexts: ['all'],
                 documentUrlPatterns: SALESFORCE_PATTERNS.flatMap((pattern) =>
                   ['o', 'r', 'setup'].map((type) =>
                     pattern.replace(/\/\*$/, `/lightning/${type}/*`),

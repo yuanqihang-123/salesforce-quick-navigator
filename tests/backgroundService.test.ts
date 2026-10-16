@@ -16,7 +16,7 @@ it('observes supported domains and ignores non-Salesforce pages', async () => {
 it('right-click prepares a session-only draft without saving a link', async () => {
   await openSaveDraft(
     'https://app.my.salesforce.com/lightning/o/Account/list?filterName=Recent#x',
-    'My Accounts',
+    'My Accounts | Salesforce',
     { id: 42, windowId: 7 },
   );
   expect((await storageService.read()).quickLinks).toEqual([]);
@@ -66,11 +66,19 @@ it('opens the save popup in the window of the right-clicked tab', async () => {
     {
       menuItemId: 'save-page',
       pageUrl: 'https://app.lightning.force.com/lightning/o/Account/list',
+      linkUrl: 'https://example.com/linked-page',
+      selectionText: 'Selected text',
     },
     { id: 99, windowId: 12, title: 'Clicked page' },
   );
   await vi.waitFor(() => expect(chromeMock.openPopup).toHaveBeenCalledWith({ windowId: 12 }));
   expect(chromeMock.setPopup.mock.calls[0]?.[0]).toMatchObject({ tabId: 99 });
+  const destination = chromeMock.setPopup.mock.calls[0]![0] as { popup: string };
+  const id = new URL(destination.popup, 'https://extension.test').searchParams.get('draft')!;
+  expect(await draftService.consume(id)).toMatchObject({
+    name: 'Clicked page',
+    route: '/lightning/o/Account/list',
+  });
   expect(chromeMock.create).not.toHaveBeenCalled();
 });
 it('registers all service-worker listeners synchronously and scopes menus to supported routes', async () => {
@@ -95,7 +103,7 @@ it('restores the save menu on worker startup without an installation event', asy
   await vi.waitFor(() => expect(chromeMock.menuCreate).toHaveBeenCalledOnce());
   expect(chromeMock.menuCreate.mock.calls[0]?.[0]).toMatchObject({
     id: 'save-page',
-    contexts: ['page'],
+    contexts: ['all'],
     documentUrlPatterns: expect.arrayContaining(['https://*.lightning.force.com/lightning/o/*']),
   });
 });

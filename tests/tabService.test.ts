@@ -34,3 +34,13 @@ it('prefills current page and propagates tab failures', async () => {
     'Tab creation failed',
   );
 });
+
+it.each(['Deployment Status | Salesforce', 'Deployment Status｜Salesforce'])(
+  'removes the Salesforce suffix from the current page name: %s',
+  async (title) => {
+    chromeMock.query.mockResolvedValue([
+      { url: 'https://one.my.salesforce.com/lightning/setup/DeployStatus/home', title },
+    ]);
+    expect(await tabService.currentPage()).toMatchObject({ name: 'Deployment Status' });
+  },
+);
